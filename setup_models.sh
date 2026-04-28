@@ -24,7 +24,10 @@ mkdir -p ${COMFYUI_DIR}/models/loras \
          ${COMFYUI_DIR}/models/diffusion_models \
          ${COMFYUI_DIR}/models/text_encoders \
          ${COMFYUI_DIR}/models/vae \
+         ${COMFYUI_DIR}/models/ultralytics/bbox \
+         ${COMFYUI_DIR}/models/ultralytics/segm \
          ${COMFYUI_DIR}/models/sam3
+         
 
 # ── Funciones de descarga ─────────────────────────────────────────────────────
 
@@ -75,6 +78,14 @@ cd ${COMFYUI_DIR}/models/text_encoders && rm -rf split_files/
 download_if_missing "https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/text_encoders/qwen_3_4b.safetensors" \
     "qwen_3_4b.safetensors"
 
+# ── BBOX Ultralytics ──────────────────────────────────────────────────────────
+echo ""
+echo "[ BBOX Ultralytics ]"
+cd ${COMFYUI_DIR}/models/ultralytics/bbox && rm -rf split_files/
+download_if_missing "https://huggingface.co/Bingsu/adetailer/resolve/main/face_yolov8m.pt" \
+    "face_yolov8m.pt"
+
+
 # --- VAE ---
 echo "[ VAE ]"
 cd ${COMFYUI_DIR}/models/vae && rm -rf split_files/
@@ -87,8 +98,17 @@ cd ${COMFYUI_DIR}/models/sam3
 download_if_missing "https://huggingface.co/facebook/sam3/resolve/main/sam3.pt" \
     "sam3.pt" "$HF_TOKEN"
 
+
+    # ── SAMS (ReActor/Segment Anything) ──────────────────────────────────────────
+echo "[ SAM3 ]"
+cd ${COMFYUI_DIR}/models/sams
+download_if_missing "https://huggingface.co/datasets/Gourieff/ReActor/resolve/main/models/sams/sam_vit_b_01ec64.pth" \
+    "sam_vit_b_01ec64.pth" 
+
 # ── Lanzar ComfyUI ────────────────────────────────────────────────────────────
+echo ""
 echo "================================================"
-echo "  Iniciando ComfyUI..."
+echo "  Setup full. starting ComfyUI..."
 echo "================================================"
-exec python ${COMFYUI_DIR}/main.py --listen 0.0.0.0 --port 8188
+
+exec python /workspace/ComfyUI/main.py --listen 0.0.0.0 --port 8188
