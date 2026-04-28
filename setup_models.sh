@@ -27,7 +27,7 @@ mkdir -p ${COMFYUI_DIR}/models/loras \
          ${COMFYUI_DIR}/models/vae \
          ${COMFYUI_DIR}/models/ultralytics/bbox \
          ${COMFYUI_DIR}/models/ultralytics/segm \
-         ${COMFYUI_DIR}/models/loras/fuelling-zimage-lora \
+         ${COMFYUI_DIR}/models/loras/fuelling-zimage \
          ${COMFYUI_DIR}/models/sams \
          ${COMFYUI_DIR}/models/sam3 
          
@@ -77,8 +77,8 @@ download_if_missing "https://civitai.red/api/download/models/2617751?type=Model&
 download_if_missing "https://huggingface.co/exjadev/fuelling-sdxl-v2/resolve/main/fuelling-000019.safetensors" \
     "fuelling-000019.safetensors"
 
-mkdir fuelling-zimage-lora
-cd ${COMFYUI_DIR}/models/loras/fuelling-zimage-lora 
+mkdir fuelling-zimage
+cd ${COMFYUI_DIR}/models/loras/fuelling-zimage 
 
 download_if_missing "https://huggingface.co/exjadev/fuelling-zimage-lora/resolve/main/fuelling_zimage/fuelling_zimage_000003100.safetensors" \
     "fuelling_zimage_000003100.safetensors"
