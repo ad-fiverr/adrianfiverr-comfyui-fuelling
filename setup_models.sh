@@ -5,6 +5,7 @@
 
 # Token actualizado según tu solicitud
 HF_TOKEN="${HF_TOKEN}"
+HF_TOKEN_loras="${HF_TOKEN_loras}"
 COMFYUI_DIR="/workspace/ComfyUI"
 
 echo "================================================"
