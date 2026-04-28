@@ -837,48 +837,6 @@
       "bgcolor": "#535"
     },
     {
-      "id": 271,
-      "type": "SAMLoader",
-      "pos": [
-        6004.968323992473,
-        -61.42563157040778
-      ],
-      "size": [
-        270,
-        82
-      ],
-      "flags": {
-        "collapsed": true
-      },
-      "order": 5,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "SAM_MODEL",
-          "type": "SAM_MODEL",
-          "links": [
-            2150
-          ]
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "SAMLoader",
-        "ue_properties": {
-          "widget_ue_connectable": {
-            "model_name": true,
-            "device_mode": true
-          },
-          "version": "7.8",
-          "input_ue_unconnectable": {}
-        }
-      },
-      "widgets_values": [
-        "sam_vit_b_01ec64.pth",
-        "AUTO"
-      ]
-    },
-    {
       "id": 261,
       "type": "CLIPTextEncode",
       "pos": [
@@ -984,7 +942,7 @@
         64.42572149049187
       ],
       "flags": {},
-      "order": 6,
+      "order": 5,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1022,7 +980,7 @@
       "flags": {
         "allow_interaction": true
       },
-      "order": 7,
+      "order": 6,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -1106,7 +1064,7 @@
         298
       ],
       "flags": {},
-      "order": 8,
+      "order": 7,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1145,7 +1103,7 @@
       "flags": {
         "allow_interaction": true
       },
-      "order": 9,
+      "order": 8,
       "mode": 4,
       "inputs": [],
       "outputs": [],
@@ -1203,48 +1161,6 @@
       "widgets_values": []
     },
     {
-      "id": 270,
-      "type": "SAMLoader",
-      "pos": [
-        4042.2592740178316,
-        -1150.1074497729146
-      ],
-      "size": [
-        270,
-        82
-      ],
-      "flags": {
-        "collapsed": true
-      },
-      "order": 10,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "SAM_MODEL",
-          "type": "SAM_MODEL",
-          "links": [
-            2149
-          ]
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "SAMLoader",
-        "ue_properties": {
-          "widget_ue_connectable": {
-            "model_name": true,
-            "device_mode": true
-          },
-          "version": "7.8",
-          "input_ue_unconnectable": {}
-        }
-      },
-      "widgets_values": [
-        "sam_vit_b_01ec64.pth",
-        "AUTO"
-      ]
-    },
-    {
       "id": 269,
       "type": "UltralyticsDetectorProvider",
       "pos": [
@@ -1258,7 +1174,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 11,
+      "order": 9,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1492,7 +1408,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 12,
+      "order": 10,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1598,41 +1514,6 @@
       ]
     },
     {
-      "id": 198,
-      "type": "PreviewImage",
-      "pos": [
-        4873.229543452723,
-        -1450.693167935343
-      ],
-      "size": [
-        729.1245791245835,
-        925.7491582491746
-      ],
-      "flags": {},
-      "order": 49,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 408
-        }
-      ],
-      "outputs": [],
-      "title": "FaceDetailer Preview Image",
-      "properties": {
-        "Node name for S&R": "PreviewImage",
-        "cnr_id": "comfy-core",
-        "ver": "0.3.30",
-        "ue_properties": {
-          "version": "7.5.1",
-          "widget_ue_connectable": {},
-          "input_ue_unconnectable": {}
-        }
-      },
-      "widgets_values": []
-    },
-    {
       "id": 267,
       "type": "UltralyticsDetectorProvider",
       "pos": [
@@ -1646,7 +1527,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 13,
+      "order": 11,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1675,48 +1556,6 @@
       },
       "widgets_values": [
         "bbox/face_yolov8m.pt"
-      ]
-    },
-    {
-      "id": 268,
-      "type": "SAMLoader",
-      "pos": [
-        1660.9543791481437,
-        -1131.0944522277932
-      ],
-      "size": [
-        270,
-        82
-      ],
-      "flags": {
-        "collapsed": true
-      },
-      "order": 14,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "SAM_MODEL",
-          "type": "SAM_MODEL",
-          "links": [
-            2147
-          ]
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "SAMLoader",
-        "ue_properties": {
-          "widget_ue_connectable": {
-            "model_name": true,
-            "device_mode": true
-          },
-          "version": "7.8",
-          "input_ue_unconnectable": {}
-        }
-      },
-      "widgets_values": [
-        "sam_vit_b_01ec64.pth",
-        "AUTO"
       ]
     },
     {
@@ -1846,7 +1685,7 @@
         1024,
         true,
         1024,
-        55935379509099,
+        72068763225143,
         "randomize",
         8,
         1,
@@ -1886,7 +1725,7 @@
         150.79415729852604
       ],
       "flags": {},
-      "order": 15,
+      "order": 12,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -1915,7 +1754,7 @@
         188.33333333333334
       ],
       "flags": {},
-      "order": 16,
+      "order": 13,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -2215,7 +2054,7 @@
         1024,
         true,
         1024,
-        151784586520059,
+        1082088008518839,
         "randomize",
         8,
         1,
@@ -2257,7 +2096,7 @@
         276.4568251715443
       ],
       "flags": {},
-      "order": 17,
+      "order": 14,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -2492,7 +2331,7 @@
         103.33333333333334
       ],
       "flags": {},
-      "order": 18,
+      "order": 15,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -2646,7 +2485,7 @@
         130
       ],
       "flags": {},
-      "order": 19,
+      "order": 16,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -2864,7 +2703,7 @@
         1024,
         true,
         1024,
-        579120957812822,
+        690020073992925,
         "randomize",
         20,
         1.5,
@@ -2982,7 +2821,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 20,
+      "order": 17,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -3055,6 +2894,167 @@
       "widgets_values": [
         "fuelling, extreme close-up of fuelling, highly detailed realistic brown eyes, sharp iris and pupil, detailed skin texture, pores, peach fuzz, hyperrealistic photography, 8k, cinematic lighting"
       ]
+    },
+    {
+      "id": 271,
+      "type": "SAMLoader",
+      "pos": [
+        5999.705666839912,
+        -69.31961729924977
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 18,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "SAM_MODEL",
+          "type": "SAM_MODEL",
+          "links": [
+            2150
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SAMLoader",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "model_name": true,
+            "device_mode": true
+          },
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "sam_vit_h_4b8939.pth",
+        "AUTO"
+      ]
+    },
+    {
+      "id": 268,
+      "type": "SAMLoader",
+      "pos": [
+        1660.9543791481437,
+        -1131.0944522277932
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 19,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "SAM_MODEL",
+          "type": "SAM_MODEL",
+          "links": [
+            2147
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SAMLoader",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "model_name": true,
+            "device_mode": true
+          },
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "sam_vit_h_4b8939.pth",
+        "AUTO"
+      ]
+    },
+    {
+      "id": 270,
+      "type": "SAMLoader",
+      "pos": [
+        4080.2043649609755,
+        -1180.873739726815
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 20,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "SAM_MODEL",
+          "type": "SAM_MODEL",
+          "links": [
+            2149
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SAMLoader",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "model_name": true,
+            "device_mode": true
+          },
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "sam_vit_h_4b8939.pth",
+        "AUTO"
+      ]
+    },
+    {
+      "id": 198,
+      "type": "PreviewImage",
+      "pos": [
+        4873.229543452723,
+        -1450.693167935343
+      ],
+      "size": [
+        729.1245791245835,
+        925.7491582491746
+      ],
+      "flags": {},
+      "order": 49,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 408
+        }
+      ],
+      "outputs": [],
+      "title": "FaceDetailer Preview Image",
+      "properties": {
+        "Node name for S&R": "PreviewImage",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.30",
+        "ue_properties": {
+          "version": "7.5.1",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": []
     }
   ],
   "links": [
@@ -3746,10 +3746,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.4548881723230842,
+      "scale": 0.9750931959931288,
       "offset": [
-        -5075.504601373176,
-        748.2878656776614
+        -4135.5221712593775,
+        1570.3884561454379
       ]
     },
     "frontendVersion": "1.42.10",

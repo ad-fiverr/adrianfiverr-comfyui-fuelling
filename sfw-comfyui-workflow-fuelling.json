@@ -532,7 +532,7 @@
             "inputs": [],
             "outputs": [
               {
-                "localized_name": "LATENTE",
+                "localized_name": "LATENT",
                 "name": "LATENT",
                 "type": "LATENT",
                 "links": [
@@ -679,7 +679,7 @@
             "inputs": [],
             "outputs": [
               {
-                "localized_name": "MODELO",
+                "localized_name": "MODEL",
                 "name": "MODEL",
                 "type": "MODEL",
                 "links": [
@@ -725,7 +725,7 @@
             ],
             "outputs": [
               {
-                "localized_name": "MODELO",
+                "localized_name": "MODEL",
                 "name": "MODEL",
                 "type": "MODEL",
                 "slot_index": 0,
@@ -759,8 +759,8 @@
             "id": 57,
             "type": "VAEDecode",
             "pos": [
-              1160.2210153613273,
-              298.86920696192334
+              1254.7413563666714,
+              306.3775477886899
             ],
             "size": [
               169.8580078125,
@@ -771,7 +771,7 @@
             "mode": 0,
             "inputs": [
               {
-                "localized_name": "muestras",
+                "localized_name": "samples",
                 "name": "samples",
                 "type": "LATENT",
                 "link": 104
@@ -785,7 +785,7 @@
             ],
             "outputs": [
               {
-                "localized_name": "IMAGEN",
+                "localized_name": "IMAGE",
                 "name": "IMAGE",
                 "type": "IMAGE",
                 "links": [
@@ -808,8 +808,8 @@
             "id": 73,
             "type": "PreviewImage",
             "pos": [
-              1507.5514642150042,
-              194.3067301170023
+              1602.0718052203492,
+              201.81507094376883
             ],
             "size": [
               674.2929592285242,
@@ -820,7 +820,7 @@
             "mode": 0,
             "inputs": [
               {
-                "localized_name": "imagenes",
+                "localized_name": "images",
                 "name": "images",
                 "type": "IMAGE",
                 "link": 142
@@ -841,8 +841,8 @@
             "id": 3,
             "type": "KSampler",
             "pos": [
-              829.6836324353201,
-              225.44679687479368
+              924.2039734406637,
+              232.9551377015602
             ],
             "size": [
               293.36850958402533,
@@ -853,25 +853,25 @@
             "mode": 0,
             "inputs": [
               {
-                "localized_name": "modelo",
+                "localized_name": "model",
                 "name": "model",
                 "type": "MODEL",
                 "link": 87
               },
               {
-                "localized_name": "positivo",
+                "localized_name": "positive",
                 "name": "positive",
                 "type": "CONDITIONING",
                 "link": 30
               },
               {
-                "localized_name": "negativo",
+                "localized_name": "negative",
                 "name": "negative",
                 "type": "CONDITIONING",
                 "link": 65
               },
               {
-                "localized_name": "imagen_latente",
+                "localized_name": "latent_image",
                 "name": "latent_image",
                 "type": "LATENT",
                 "link": 91
@@ -879,7 +879,7 @@
             ],
             "outputs": [
               {
-                "localized_name": "LATENTE",
+                "localized_name": "LATENT",
                 "name": "LATENT",
                 "type": "LATENT",
                 "slot_index": 0,
@@ -919,8 +919,8 @@
             "id": 43,
             "type": "CLIPTextEncode",
             "pos": [
-              422.2224214878204,
-              652.9592558799841
+              516.7427624931645,
+              660.4675967067507
             ],
             "size": [
               400,
@@ -941,7 +941,7 @@
             ],
             "outputs": [
               {
-                "localized_name": "ACONDICIONAMIENTO",
+                "localized_name": "CONDITIONING",
                 "name": "CONDITIONING",
                 "type": "CONDITIONING",
                 "links": [
@@ -962,74 +962,11 @@
             ]
           },
           {
-            "id": 41,
-            "type": "LoraLoader",
-            "pos": [
-              -229.63165492283255,
-              250.3884723407948
-            ],
-            "size": [
-              270,
-              126
-            ],
-            "flags": {},
-            "order": 4,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "modelo",
-                "name": "model",
-                "type": "MODEL",
-                "link": 59
-              },
-              {
-                "localized_name": "clip",
-                "name": "clip",
-                "type": "CLIP",
-                "link": 48
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "MODELO",
-                "name": "MODEL",
-                "type": "MODEL",
-                "links": [
-                  67
-                ]
-              },
-              {
-                "localized_name": "CLIP",
-                "name": "CLIP",
-                "type": "CLIP",
-                "links": [
-                  68,
-                  69
-                ]
-              }
-            ],
-            "properties": {
-              "Node name for S&R": "LoraLoader",
-              "cnr_id": "comfy-core",
-              "ver": "0.9.1",
-              "ue_properties": {
-                "widget_ue_connectable": {},
-                "version": "7.5.2",
-                "input_ue_unconnectable": {}
-              }
-            },
-            "widgets_values": [
-              "fuelling_zimage/fuelling_zimage_000002100.safetensors",
-              1,
-              1
-            ]
-          },
-          {
             "id": 27,
             "type": "CLIPTextEncode",
             "pos": [
-              420.7288042600205,
-              193.75682471541987
+              515.2491452653646,
+              201.2651655421864
             ],
             "size": [
               392.6948076672202,
@@ -1050,7 +987,7 @@
             ],
             "outputs": [
               {
-                "localized_name": "ACONDICIONAMIENTO",
+                "localized_name": "CONDITIONING",
                 "name": "CONDITIONING",
                 "type": "CONDITIONING",
                 "links": [
@@ -1078,6 +1015,69 @@
             "widgets_values": [
               "fuelling, high angle medium shot of a young woman lounging in a gaming chair with a ahegao expression, parted lips, and direct gaze into the camera, wearing a white sports bra, white high-thigh socks with black stripes, and revealing exposed skin on legs and midriff. The scene is illuminated by cool indoor ambient lighting with subtle purple-toned rim lighting against a neutral indoor room background. Raw photo style, natural skin texture, sharp focus on the face, slight digital noise typical of indoor phone photography, high quality, no text, no watermark, no logos, no extra limbs."
             ]
+          },
+          {
+            "id": 41,
+            "type": "LoraLoader",
+            "pos": [
+              -229.63165492283255,
+              250.3884723407948
+            ],
+            "size": [
+              270,
+              126
+            ],
+            "flags": {},
+            "order": 4,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "link": 59
+              },
+              {
+                "localized_name": "clip",
+                "name": "clip",
+                "type": "CLIP",
+                "link": 48
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "MODEL",
+                "name": "MODEL",
+                "type": "MODEL",
+                "links": [
+                  67
+                ]
+              },
+              {
+                "localized_name": "CLIP",
+                "name": "CLIP",
+                "type": "CLIP",
+                "links": [
+                  68,
+                  69
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "LoraLoader",
+              "cnr_id": "comfy-core",
+              "ver": "0.9.1",
+              "ue_properties": {
+                "widget_ue_connectable": {},
+                "version": "7.5.2",
+                "input_ue_unconnectable": {}
+              }
+            },
+            "widgets_values": [
+              "fuelling_zimage/fuelling_zimage_000003100.safetensors",
+              1,
+              1
+            ]
           }
         ],
         "groups": [
@@ -1098,8 +1098,8 @@
             "id": 3,
             "title": "Step3 - Prompt",
             "bounding": [
-              400.7288042600205,
-              123.75682471541987,
+              495.2491452653645,
+              131.26516554218642,
               1879.3666331763216,
               808.6371531779065
             ],
@@ -1259,10 +1259,10 @@
     "ue_links": [],
     "links_added_by_ue": [],
     "ds": {
-      "scale": 0.7332891847875794,
+      "scale": 0.7958438250628124,
       "offset": [
-        -215.6787392954489,
-        243.50430750627393
+        -36.688192552057124,
+        -84.22116282881288
       ]
     }
   },

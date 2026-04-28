@@ -27,7 +27,9 @@ mkdir -p ${COMFYUI_DIR}/models/loras \
          ${COMFYUI_DIR}/models/vae \
          ${COMFYUI_DIR}/models/ultralytics/bbox \
          ${COMFYUI_DIR}/models/ultralytics/segm \
-         ${COMFYUI_DIR}/models/sam3
+         ${COMFYUI_DIR}/models/loras/fuelling-zimage-lora \
+         ${COMFYUI_DIR}/models/sams \
+         ${COMFYUI_DIR}/models/sam3 
          
 
 # ── Funciones de descarga ─────────────────────────────────────────────────────
@@ -67,9 +69,19 @@ rm -rf split_files/
 # Nota: El comando oficial es 'huggingface-cli download'
 huggingface-cli download exjadev/fuelling-zimage-lora --local-dir .
 huggingface-cli download exjadev/fuelling-sdxl-v2 --local-dir .
+
 # Civitai Instagram Filter
 download_if_missing "https://civitai.red/api/download/models/2617751?type=Model&format=SafeTensor&token=e3a803e3831ec4832fd75d014b2d385e" \
     "instagram-filter.safetensors"
+
+download_if_missing "https://huggingface.co/exjadev/fuelling-sdxl-v2/resolve/main/fuelling-000019.safetensors" \
+    "fuelling-000019.safetensors"
+
+mkdir fuelling-zimage-lora
+cd ${COMFYUI_DIR}/models/loras/fuelling-zimage-lora 
+
+download_if_missing "https://huggingface.co/exjadev/fuelling-zimage-lora/resolve/main/fuelling_zimage/fuelling_zimage_000003100.safetensors" \
+    "fuelling_zimage_000003100.safetensors"
 
 # --- CHECKPOINTS ---
 echo "[ Checkpoints ]"
@@ -115,6 +127,9 @@ echo "[ SAM3 ]"
 cd ${COMFYUI_DIR}/models/sams
 download_if_missing "https://huggingface.co/datasets/Gourieff/ReActor/resolve/main/models/sams/sam_vit_b_01ec64.pth" \
     "sam_vit_b_01ec64.pth" 
+
+download_if_missing "https://huggingface.co/HCMUE-Research/SAM-vit-h/resolve/main/sam_vit_h_4b8939.pth" \
+    "sam_vit_h_4b8939.pth" 
 
 # ── Lanzar ComfyUI ────────────────────────────────────────────────────────────
 echo ""
