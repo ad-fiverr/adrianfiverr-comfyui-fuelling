@@ -48,14 +48,24 @@ download_hf_repo() {
     HF_TOKEN=${HF_TOKEN} huggingface-cli download "$repo" --local-dir "$dest_dir" --local-dir-use-symlinks False
 }
 
+echo "Instalando huggingface_hub..."
+pip install -U huggingface_hub
+
+echo "Auth with Hugging Face..."
+# Usamos el comando de Python para el login con el token proporcionado
+python3 -c "from huggingface_hub import login; login(token='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')"
+
 # ── SECCIÓN DE DESCARGAS (Nuevos Comandos Integrados) ─────────────────────────
 
 # --- LORAS ---
 echo "[ LoRAs ]"
 cd ${COMFYUI_DIR}/models/loras && rm -rf split_files/
-# Nuevos repos solicitados
-download_hf_repo "exjadev/fuelling-zimage-lora" "."
-download_hf_repo "exjadev/fuelling-sdxl-v2" "."
+echo "Cleaning folder files..."
+rm -rf split_files/
+
+# Nota: El comando oficial es 'huggingface-cli download'
+huggingface-cli download exjadev/fuelling-zimage-lora --local-dir .
+huggingface-cli download exjadev/fuelling-sdxl-v2 --local-dir .
 # Civitai Instagram Filter
 download_if_missing "https://civitai.red/api/download/models/2617751?type=Model&format=SafeTensor&token=e3a803e3831ec4832fd75d014b2d385e" \
     "instagram-filter.safetensors"
