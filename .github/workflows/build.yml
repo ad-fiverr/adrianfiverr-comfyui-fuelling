@@ -13,6 +13,21 @@ jobs:
     timeout-minutes: 360
 
     steps:
+      - name: Liberar espacio en disco (~30GB)
+        run: |
+          echo "Espacio antes:"
+          df -h /
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /usr/local/lib/android
+          sudo rm -rf /opt/ghc
+          sudo rm -rf /opt/hostedtoolcache/CodeQL
+          sudo rm -rf /usr/local/share/boost
+          sudo rm -rf "$AGENT_TOOLSDIRECTORY"
+          sudo docker image prune -af
+          sudo apt-get clean
+          echo "Espacio después:"
+          df -h /
+
       - name: Checkout del repositorio
         uses: actions/checkout@v4
 
@@ -30,5 +45,9 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ env.IMAGE_NAME }}:latest
+          tags: |
+            ${{ env.IMAGE_NAME }}:latest
+            ${{ env.IMAGE_NAME }}:build-${{ github.run_number }}
           no-cache: true
+          build-args: |
+            HF_TOKEN=${{ secrets.HF_TOKEN }}
