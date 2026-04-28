@@ -43,9 +43,7 @@ RUN cd ${COMFYUI_DIR}/models/loras && rm -rf split_files/ && \
     HF_TOKEN=${HF_TOKEN} huggingface-cli download exjadev/fuelling-zimage-lora --local-dir . --local-dir-use-symlinks False && \
     HF_TOKEN=${HF_TOKEN} huggingface-cli download exjadev/fuelling-sdxl-v2 --local-dir . --local-dir-use-symlinks False && \
     # Civitai Lora
-    wget -q "<https://civitai.red/api/download/models/2617751?type=Model&format=SafeTensor&token=e3a803e3831ec4832fd75d014b2d385e>" -O instagram-filter.safetensors && \
-    # Google Drive Lora (mantenido del original)
-    gdown "https://drive.google.com/uc?id=1ts-Ucv_fLsoPkJS_uahZpcfJJsznysK3" -O z_image_lora.safetensors
+    wget -q "<https://civitai.red/api/download/models/2617751?type=Model&format=SafeTensor&token=e3a803e3831ec4832fd75d014b2d385e>" -O instagram-filter.safetensors 
 
 # ── Checkpoints ───────────────────────────────────────────────────────────────
 RUN cd ${COMFYUI_DIR}/models/checkpoints && rm -rf split_files/ && \
