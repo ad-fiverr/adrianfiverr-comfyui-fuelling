@@ -1,4 +1,4 @@
-FROM ls250824/run-comfyui-image:24032026
+FROM ls250824/run-comfyui-image:13042026
 
 ENV DEBIAN_FRONTEND=noninteractive
 # ComfyUI ya esta en /ComfyUI en la imagen base
@@ -10,6 +10,7 @@ RUN apt-get update -qq && apt-get install -y -qq git wget && \
 
 # Custom Nodes en /ComfyUI (se copian al workspace en el primer arranque)
 RUN cd /ComfyUI/custom_nodes && \
+    rm -rf rgthree-comfy ComfyUI-Impact-Pack ComfyUI_essentials ComfyUI-GGUF ComfyUI-Impact-Subpack cg-use-everywhere && \
     git clone --depth=1 https://github.com/rgthree/rgthree-comfy && \
     git clone --depth=1 https://github.com/ltdrdata/ComfyUI-Impact-Pack && \
     git clone --depth=1 https://github.com/cubiq/ComfyUI_essentials && \
@@ -22,6 +23,11 @@ RUN for dir in rgthree-comfy ComfyUI-Impact-Pack ComfyUI_essentials ComfyUI-GGUF
       if [ -f "$REQ" ]; then pip install -q -r "$REQ"; fi; \
     done
 
+
+
+RUN rm -rf /ComfyUI/ComfyUI-Login /ComfyUI/ComfyUI-login
+
+
 RUN mkdir -p /ComfyUI/user/default/workflows
 COPY nsfw-ultratozimage-fuelling.json /ComfyUI/user/default/workflows/nsfw-workflow.json
 COPY sfw-comfyui-workflow-fuelling.json /ComfyUI/user/default/workflows/sfw-workflow.json
@@ -32,11 +38,9 @@ RUN apt-get update -qq && apt-get install -y -qq git wget && \
     pip install -q gdown huggingface_hub && \
     rm -rf /var/lib/apt/lists/*
 
-
-RUN rm -rf /ComfyUI/ComfyUI-Login /ComfyUI/ComfyUI-login
-
 COPY setup_models.sh /setup_models.sh
 RUN chmod +x /setup_models.sh
+
 
 EXPOSE 8188
 CMD ["/setup_models.sh"]
