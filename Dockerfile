@@ -1,4 +1,4 @@
-FROM ls250824/run-comfyui-image:13042026
+FROM ls250824/run-comfyui-image:15042026
 
 ENV DEBIAN_FRONTEND=noninteractive
 # ComfyUI ya esta en /ComfyUI en la imagen base
