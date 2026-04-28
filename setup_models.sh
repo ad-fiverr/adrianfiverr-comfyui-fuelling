@@ -53,7 +53,7 @@ pip install -U huggingface_hub
 
 echo "Auth with Hugging Face..."
 # Usamos el comando de Python para el login con el token proporcionado
-python3 -c "from huggingface_hub import login; login(token='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')"
+python3 -c "from huggingface_hub import login; login(token="$HF_TOKEN_loras")"
 
 # ── SECCIÓN DE DESCARGAS (Nuevos Comandos Integrados) ─────────────────────────
 
